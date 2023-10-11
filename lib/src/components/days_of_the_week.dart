@@ -2,15 +2,7 @@ import 'package:cell_calendar/cell_calendar.dart';
 import 'package:flutter/material.dart';
 
 /// Default days of the week
-const List<String> _DaysOfTheWeek = [
-  'Sun',
-  'Mon',
-  'Tue',
-  'Wed',
-  'Thu',
-  'Fry',
-  'Sat'
-];
+const List<String> _DaysOfTheWeek = ['일', '월', '화', '수', '목', '금', '토'];
 
 /// Show the row of text from [_DaysOfTheWeek]
 class DaysOfTheWeek extends StatelessWidget {

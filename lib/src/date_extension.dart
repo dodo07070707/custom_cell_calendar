@@ -16,18 +16,18 @@ extension DateExtension on int {
   /// MonthName for the number of month
   String get monthName {
     final monthNameList = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월"
     ];
     return monthNameList[this - 1];
   }
