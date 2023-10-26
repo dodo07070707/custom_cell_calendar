@@ -189,7 +189,7 @@ class _DayLabel extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
           top: screenHeight / 844 * 8, bottom: screenHeight / 844 * 18),
-      height: screenHeight / 844 * 86,
+      height: screenHeight / 844 * 90,
       child: Text(
         date.day.toString(),
         textAlign: TextAlign.center,
