@@ -188,7 +188,7 @@ class _DayLabel extends StatelessWidget {
     final textStyle = caption.merge(dateTextStyle);
     return Container(
       margin:
-          EdgeInsets.symmetric(vertical: (screenHeight / 844 * 8).toDouble()),
+          EdgeInsets.symmetric(vertical: (screenHeight / 844 * 16).toDouble()),
       height: dayLabelContentHeight.toDouble(),
       child: Text(
         date.day.toString(),
