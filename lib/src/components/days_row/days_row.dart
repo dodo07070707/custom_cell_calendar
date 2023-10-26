@@ -179,13 +179,16 @@ class _DayLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     final isCurrentMonth = visiblePageDate.month == date.month;
     final caption = Theme.of(context).textTheme.bodySmall!.copyWith(
         fontWeight: FontWeight.w500,
         color: Theme.of(context).colorScheme.onSurface);
     final textStyle = caption.merge(dateTextStyle);
     return Container(
-      margin: EdgeInsets.symmetric(vertical: dayLabelVerticalMargin.toDouble()),
+      margin:
+          EdgeInsets.symmetric(vertical: (screenHeight / 844 * 4).toDouble()),
       height: dayLabelContentHeight.toDouble(),
       child: Text(
         date.day.toString(),
