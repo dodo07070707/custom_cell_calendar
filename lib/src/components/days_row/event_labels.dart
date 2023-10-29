@@ -64,11 +64,9 @@ class EventLabels extends HookConsumerWidget {
       shrinkWrap: true,
       itemCount: eventsOnTheDay.length,
       itemBuilder: (context, index) {
-        if (hasEnoughSpace) {
+        if (index == 0) {
           return _EventLabel(eventsOnTheDay[index]);
-        } else if (index < maxIndex) {
-          return _EventLabel(eventsOnTheDay[index]);
-        } else if (index == maxIndex) {
+        } else if (index == 1) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
