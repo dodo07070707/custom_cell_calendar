@@ -184,6 +184,8 @@ class _CalendarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     final days = _getCurrentDays(visiblePageDate);
     return Column(
       children: [
@@ -194,14 +196,17 @@ class _CalendarPage extends StatelessWidget {
             children: List.generate(
               6,
               (index) {
-                return DaysRow(
-                  visiblePageDate: visiblePageDate,
-                  dates: days.getRange(index * 7, (index + 1) * 7).toList(),
-                  dateTextStyle: dateTextStyle,
-                  onCellTapped: onCellTapped,
-                  todayMarkColor: todayMarkColor,
-                  todayTextColor: todayTextColor,
-                  events: events,
+                return SizedBox(
+                  height: screenHeight / 844 * 86, //! 한칸당 세로줄 크기
+                  child: DaysRow(
+                    visiblePageDate: visiblePageDate,
+                    dates: days.getRange(index * 7, (index + 1) * 7).toList(),
+                    dateTextStyle: dateTextStyle,
+                    onCellTapped: onCellTapped,
+                    todayMarkColor: todayMarkColor,
+                    todayTextColor: todayTextColor,
+                    events: events,
+                  ),
                 );
               },
             ),
