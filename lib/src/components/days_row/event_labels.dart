@@ -89,8 +89,8 @@ class _EventLabel extends StatelessWidget {
       height: screenHeight / 844 * 18,
       margin: EdgeInsets.only(
           top: (index == 0) ? screenHeight / 844 * 2 : screenHeight / 844 * 5,
-          left: screenWidth / 390 * 2,
-          right: screenWidth / 390 * 2),
+          left: screenWidth / 390 * 2.5,
+          right: screenWidth / 390 * 2.5),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
