@@ -8,7 +8,7 @@ class CalendarEvent {
     required this.eventName,
     required this.eventDate,
     required this.eventTextStyle,
-    this.eventBackgroundColor = Colors.blue,
+    this.eventBackgroundColor = const Color(0xFF38498E), // ! 이벤트 고유 색
     this.eventID,
   });
 
