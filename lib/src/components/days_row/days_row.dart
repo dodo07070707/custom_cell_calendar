@@ -192,7 +192,7 @@ class _DayLabel extends StatelessWidget {
         top: screenHeight / 844 * 10,
         bottom: screenHeight / 844 * 6, //! 날짜 기준 위아래 Padding
       ),
-      height: screenHeight / 844 * 9,
+      height: screenHeight / 844 * 13,
       child: Text(
         date.day.toString(),
         textAlign: TextAlign.center,
