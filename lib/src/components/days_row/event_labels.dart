@@ -66,20 +66,6 @@ class EventLabels extends HookConsumerWidget {
       itemBuilder: (context, index) {
         if (index == 0) {
           return _EventLabel(eventsOnTheDay[index], index);
-        } else if (index == 1) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _EventLabel(
-                eventsOnTheDay[index],
-                index,
-              ),
-              Icon(
-                Icons.more_horiz,
-                size: 13,
-              )
-            ],
-          );
         } else {
           return SizedBox.shrink();
         }
@@ -102,7 +88,7 @@ class _EventLabel extends StatelessWidget {
     return Container(
       height: screenHeight / 844 * 18,
       margin: EdgeInsets.only(
-          top: (index == 1) ? 0 : screenHeight / 844 * 1,
+          top: (index == 1) ? 0 : screenHeight / 844 * 4,
           left: screenWidth / 390 * 2,
           right: screenWidth / 390 * 2),
       width: double.infinity,
