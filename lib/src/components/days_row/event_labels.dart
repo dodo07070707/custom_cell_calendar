@@ -60,6 +60,7 @@ class EventLabels extends HookConsumerWidget {
     final maxIndex = _maxIndex(cellHeight, eventsOnTheDay.length);
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.zero,
       shrinkWrap: true,
       itemCount: eventsOnTheDay.length,
       itemBuilder: (context, index) {
