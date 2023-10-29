@@ -197,7 +197,7 @@ class _CalendarPage extends StatelessWidget {
               6,
               (index) {
                 return SizedBox(
-                  height: screenHeight / 844 * 72, //! 한칸당 세로줄 크기
+                  height: screenHeight / 844 * 75, //! 한칸당 세로줄 크기
                   child: DaysRow(
                     visiblePageDate: visiblePageDate,
                     dates: days.getRange(index * 7, (index + 1) * 7).toList(),
