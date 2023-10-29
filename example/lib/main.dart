@@ -57,55 +57,6 @@ class MyHomePage extends StatelessWidget {
             ),
           );
         },
-        monthYearLabelBuilder: (datetime) {
-          final year = datetime?.year.toString();
-          final month = datetime?.month.toString();
-          return Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SizedBox(
-                  width: screenWidth / 390 * 174,
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.arrow_back_ios_sharp,
-                        size: screenWidth / 390 * 22,
-                        color: Colors.black,
-                      ),
-                      SizedBox(width: screenWidth / 390 * 30),
-                      Text(
-                        "$year.$month",
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          height: 1.25,
-                        ),
-                      ),
-                      SizedBox(width: screenWidth / 390 * 25),
-                      Icon(
-                        Icons.arrow_forward_ios_sharp,
-                        size: screenWidth / 390 * 22,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                decoration: ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: 0.5,
-                      strokeAlign: BorderSide.strokeAlignCenter,
-                      color: Colors.black.withOpacity(0.1),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          );
-        },
         onCellTapped: (date) {
           final eventsOnTheDate = events.where((event) {
             final eventDate = event.eventDate;
