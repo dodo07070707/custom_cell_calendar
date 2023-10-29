@@ -104,11 +104,13 @@ class _EventLabel extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         color: event.eventBackgroundColor,
       ),
-      child: Text(
-        event.eventName,
-        style: event.eventTextStyle,
-        textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
+      child: Center(
+        child: Text(
+          event.eventName,
+          style: event.eventTextStyle,
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }
