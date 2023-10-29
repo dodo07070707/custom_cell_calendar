@@ -100,7 +100,7 @@ class _EventLabel extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: screenHeight / 844 * 20,
+      height: screenHeight / 844 * 18,
       margin: EdgeInsets.only(
           top: (index == 1) ? 0 : screenHeight / 844 * 1,
           left: screenWidth / 390 * 2,
