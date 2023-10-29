@@ -88,7 +88,7 @@ class _EventLabel extends StatelessWidget {
     return Container(
       height: screenHeight / 844 * 18,
       margin: EdgeInsets.only(
-          top: (index == 0) ? 0 : screenHeight / 844 * 5,
+          top: (index == 0) ? screenHeight / 844 * 2 : screenHeight / 844 * 5,
           left: screenWidth / 390 * 2,
           right: screenWidth / 390 * 2),
       width: double.infinity,
