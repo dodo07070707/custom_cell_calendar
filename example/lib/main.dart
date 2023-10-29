@@ -35,6 +35,8 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final events = sampleEvents();
     final cellCalendarPageController = CellCalendarPageController();
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -56,34 +58,52 @@ class MyHomePage extends StatelessWidget {
           );
         },
         monthYearLabelBuilder: (datetime) {
-          final year = datetime!.year.toString();
-          final month = datetime.month.monthName;
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: Row(
-              children: [
-                const SizedBox(width: 16),
-                Text(
-                  "$month  $year",
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+          final year = datetime?.year.toString();
+          final month = datetime?.month.toString();
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: SizedBox(
+                  width: screenWidth / 390 * 174,
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.arrow_back_ios_sharp,
+                        size: screenWidth / 390 * 22,
+                        color: Colors.black,
+                      ),
+                      SizedBox(width: screenWidth / 390 * 30),
+                      Text(
+                        "$year.$month",
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          height: 1.25,
+                        ),
+                      ),
+                      SizedBox(width: screenWidth / 390 * 25),
+                      Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        size: screenWidth / 390 * 22,
+                        color: Colors.black,
+                      ),
+                    ],
                   ),
                 ),
-                const Spacer(),
-                IconButton(
-                  padding: EdgeInsets.zero,
-                  icon: const Icon(Icons.calendar_today),
-                  onPressed: () {
-                    cellCalendarPageController.animateToDate(
-                      DateTime.now(),
-                      curve: Curves.linear,
-                      duration: const Duration(milliseconds: 300),
-                    );
-                  },
-                )
-              ],
-            ),
+              ),
+              Container(
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 0.5,
+                      strokeAlign: BorderSide.strokeAlignCenter,
+                      color: Colors.black.withOpacity(0.1),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           );
         },
         onCellTapped: (date) {
