@@ -64,7 +64,7 @@ class EventLabels extends HookConsumerWidget {
       shrinkWrap: true,
       itemCount: eventsOnTheDay.length,
       itemBuilder: (context, index) {
-        if (index == 0) {
+        if (index == 0 || index == 1) {
           return _EventLabel(eventsOnTheDay[index], index);
         } else {
           return SizedBox.shrink();
