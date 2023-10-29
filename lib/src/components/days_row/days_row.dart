@@ -146,7 +146,7 @@ class _TodayLabel extends StatelessWidget {
         .copyWith(fontWeight: FontWeight.w500);
     final textStyle = caption.merge(dateTextStyle);
     return Container(
-      margin: EdgeInsets.only(top: screenHeight / 844 * 4),
+      margin: EdgeInsets.only(top: screenHeight / 844 * 2.5),
       height: screenHeight / 844 * 27,
       width: screenHeight / 844 * 27,
       decoration: BoxDecoration(

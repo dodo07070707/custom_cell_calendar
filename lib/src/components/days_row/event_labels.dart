@@ -96,11 +96,15 @@ class _EventLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(right: 4, bottom: 3),
-      height: 13,
+      height: screenHeight / 844 * 20,
       width: double.infinity,
       color: event.eventBackgroundColor,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+      ),
       child: Text(
         event.eventName,
         style: event.eventTextStyle,
