@@ -35,10 +35,8 @@ class CellCalendarPageController extends PageController {
     int page, {
     required Duration duration,
     required Curve curve,
-  }) async {
-    if (PageController().hasClients) {
-      return super.animateToPage(initialPageIndex + page,
-          duration: duration, curve: curve);
-    }
+  }) {
+    return super.animateToPage(initialPageIndex + page,
+        duration: duration, curve: curve);
   }
 }
