@@ -101,9 +101,9 @@ class _EventLabel extends StatelessWidget {
     return Container(
       height: screenHeight / 844 * 20,
       width: double.infinity,
-      color: event.eventBackgroundColor,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
+        color: event.eventBackgroundColor,
       ),
       child: Text(
         event.eventName,
