@@ -65,13 +65,14 @@ class EventLabels extends HookConsumerWidget {
       itemCount: eventsOnTheDay.length,
       itemBuilder: (context, index) {
         if (index == 0) {
-          return _EventLabel(eventsOnTheDay[index]);
+          return _EventLabel(eventsOnTheDay[index], index);
         } else if (index == 1) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _EventLabel(
                 eventsOnTheDay[index],
+                index,
               ),
               Icon(
                 Icons.more_horiz,
@@ -89,9 +90,10 @@ class EventLabels extends HookConsumerWidget {
 
 /// label to show [CalendarEvent]
 class _EventLabel extends StatelessWidget {
-  _EventLabel(this.event);
+  _EventLabel(this.event, this.index);
 
   final CalendarEvent event;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +101,10 @@ class _EventLabel extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: screenHeight / 844 * 20,
+      padding: EdgeInsets.only(
+          top: (index == 1) ? 0 : screenHeight / 844 * 1,
+          left: screenWidth / 390 * 2,
+          right: screenWidth / 390 * 2),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
