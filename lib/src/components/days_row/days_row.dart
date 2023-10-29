@@ -139,6 +139,7 @@ class _TodayLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     final caption = Theme.of(context)
         .textTheme
         .bodySmall!
@@ -146,8 +147,8 @@ class _TodayLabel extends StatelessWidget {
     final textStyle = caption.merge(dateTextStyle);
     return Container(
       margin: EdgeInsets.symmetric(vertical: 2),
-      height: 20,
-      width: 20,
+      height: screenHeight / 844 * 27,
+      width: screenHeight / 844 * 27,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: todayMarkColor,
@@ -189,7 +190,7 @@ class _DayLabel extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         top: screenHeight / 844 * 10,
-        bottom: screenHeight / 844 * 6, //! 날짜 기준 위아래 padding
+        bottom: screenHeight / 844 * 6, //! 날짜 기준 위아래 Padding
       ),
       height: dayLabelContentHeight.toDouble(),
       child: Text(
