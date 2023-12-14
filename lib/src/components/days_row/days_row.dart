@@ -197,13 +197,17 @@ class _DayLabel extends StatelessWidget {
         date.day.toString(),
         textAlign: TextAlign.center,
         style: textStyle.copyWith(
-          color: date.weekday == DateTime.sunday
+          color: date.weekday == DateTime.sunday && isCurrentMonth
               ? Color(0xFFD20000)
-              : date.weekday == DateTime.saturday
+              : date.weekday == DateTime.saturday && isCurrentMonth
                   ? Color(0xFF5100FD)
                   : isCurrentMonth
                       ? textStyle.color
-                      : textStyle.color!.withOpacity(0.4),
+                      : date.weekday == DateTime.sunday
+                          ? Color(0xFFD20000).withOpacity(0.4)
+                          : date.weekday == DateTime.saturday
+                              ? Color(0xFF5100FD).withOpacity(0.3)
+                              : textStyle.color!.withOpacity(0.4),
         ),
       ),
     );
